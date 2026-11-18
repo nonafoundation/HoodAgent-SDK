@@ -1,0 +1,34 @@
+{
+  "name": "@hoodagent/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for Raeto vaults on Robinhood Chain: live Morpho APY, oracle prices, positions, and unsigned, simulated deposit/withdraw transactions.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": { "node": ">=20" },
+  "keywords": ["robinhood-chain", "raeto", "morpho", "stock-tokens", "usdg", "viem", "defi", "ai-agents", "sdk"],
+  "homepage": "https://hoodagent.xyz",
+  "repository": { "type": "git", "url": "git+https://github.com/nonafoundation/HoodAgent-SDK.git" },
+  "bugs": { "url": "https://github.com/nonafoundation/HoodAgent-SDK/issues" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "example:vaults": "tsx examples/read-vaults.ts",
+    "prepublishOnly": "pnpm check"
+  },
+  "peerDependencies": { "viem": "^2.30.0" },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "viem": "^2.57.20",
+    "vitest": "^5.1.0"
+  },
+  "packageManager": "pnpm@12.11.2"
+}
