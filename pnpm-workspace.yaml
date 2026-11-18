@@ -1,0 +1,3 @@
+# esbuild install script is intentionally NOT run (tsx/vitest work with the prebuilt binary).
+allowBuilds:
+  esbuild: false
