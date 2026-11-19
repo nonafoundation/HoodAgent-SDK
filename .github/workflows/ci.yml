@@ -3,13 +3,23 @@ on:
   push: { branches: [main] }
   pull_request:
 permissions: { contents: read }
+concurrency: { group: ci-${{ github.ref }}, cancel-in-progress: true }
 jobs:
   check:
+    name: Node ${{ matrix.node }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: { node: [20, 22, 24] }
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 22, cache: pnpm }
+        with: { node-version: "${{ matrix.node }}", cache: pnpm }
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
+      - name: Package contents
+        if: matrix.node == 22
+        run: |
+          npm pack --dry-run 2>&1 | tee pack.txt
+          ! grep -E "test/|examples/|\.env|src/" pack.txt

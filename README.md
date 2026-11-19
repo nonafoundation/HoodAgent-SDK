@@ -155,6 +155,15 @@ Details and contract addresses: [whitepaper](https://hoodagent.xyz/whitepaper).
 
 Found a vulnerability? See [SECURITY.md](SECURITY.md).
 
+## Documentation
+
+| Guide | |
+|---|---|
+| [Getting started](docs/getting-started.md) | Install, create a client, read data |
+| [Transactions](docs/transactions.md) | Deposit & withdraw: checks, error codes, simulation, signing |
+| [How the numbers work](docs/data.md) | APY, oracle prices, stock-vault accounting, caching |
+| [Using with AI agents](docs/agents.md) | Tool definitions and guardrails for LLM agents |
+
 ## Examples
 
 ```bash
@@ -172,11 +181,18 @@ pnpm install
 pnpm check      # typecheck + tests (offline) + build
 ```
 
-Tests run offline against a fake client — no RPC needed in CI.
+Tests run offline against a fake client — no RPC needed in CI. CI runs on Node 20, 22 and 24, plus CodeQL; tagging `vX.Y.Z` publishes a GitHub release with notes from the changelog.
 
 ## Disclaimer
 
 Independent software, not affiliated with Raeto, Morpho, Steakhouse or Robinhood. Interacting with smart contracts carries risk, including total loss. Yields are variable. Not financial advice.
+
+## Community
+
+- Questions and ideas: [open an issue](https://github.com/nonafoundation/HoodAgent-SDK/issues/new/choose)
+- Contributing: [CONTRIBUTING.md](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md)
+- Security: [SECURITY.md](SECURITY.md)
+- Updates: [@HoodAgent_xyz](https://x.com/HoodAgent_xyz)
 
 ## License
 

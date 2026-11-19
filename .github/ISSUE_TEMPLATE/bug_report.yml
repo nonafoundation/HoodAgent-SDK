@@ -1,0 +1,31 @@
+name: Bug report
+description: Something in the SDK returns wrong data, throws unexpectedly, or builds a wrong transaction.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste private keys, seed phrases or API keys.** Security issues → use *Security → Report a vulnerability* instead.
+  - type: textarea
+    id: what
+    attributes: { label: What happened?, description: Include the call you made and what you expected. }
+    validations: { required: true }
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      render: ts
+      placeholder: |
+        const hood = createHoodAgent();
+        await hood.prepareDeposit({ account: "0x…", asset: "USDG", amount: "10" });
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes: { label: "@hoodagent/sdk version", placeholder: "0.1.0" }
+    validations: { required: true }
+  - type: input
+    id: env
+    attributes: { label: Runtime, placeholder: "Node 22 / Chrome 131 / Bun 1.2, viem 2.x" }
+  - type: input
+    id: tx
+    attributes: { label: Related transaction or address (optional), placeholder: "https://robinhoodchain.blockscout.com/tx/0x…" }

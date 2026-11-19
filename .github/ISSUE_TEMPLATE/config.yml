@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/nonafoundation/HoodAgent-SDK/security/advisories/new
+    about: Report privately — please don't open a public issue.
+  - name: HoodAgent app & whitepaper
+    url: https://hoodagent.xyz/whitepaper
+    about: How the yield, prices and transaction safety work.
+  - name: News & updates on X
+    url: https://x.com/HoodAgent_xyz
+    about: Announcements from the HoodAgent team.

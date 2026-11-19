@@ -6,23 +6,52 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
-  "files": ["dist", "README.md", "LICENSE"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
-  "engines": { "node": ">=20" },
-  "keywords": ["robinhood-chain", "raeto", "morpho", "stock-tokens", "usdg", "viem", "defi", "ai-agents", "sdk"],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "robinhood-chain",
+    "raeto",
+    "morpho",
+    "stock-tokens",
+    "usdg",
+    "viem",
+    "defi",
+    "ai-agents",
+    "sdk"
+  ],
   "homepage": "https://hoodagent.xyz",
-  "repository": { "type": "git", "url": "git+https://github.com/nonafoundation/HoodAgent-SDK.git" },
-  "bugs": { "url": "https://github.com/nonafoundation/HoodAgent-SDK/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonafoundation/HoodAgent-SDK.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nonafoundation/HoodAgent-SDK/issues"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "pnpm clean && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check": "pnpm typecheck && pnpm test && pnpm build",
     "example:vaults": "tsx examples/read-vaults.ts",
-    "prepublishOnly": "pnpm check"
+    "prepublishOnly": "pnpm check",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
   },
-  "peerDependencies": { "viem": "^2.30.0" },
+  "peerDependencies": {
+    "viem": "^2.30.0"
+  },
   "devDependencies": {
     "@types/node": "^26.6.6",
     "tsx": "^4.23.15",
