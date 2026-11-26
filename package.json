@@ -56,8 +56,8 @@
     "@types/node": "^26.6.6",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
-    "viem": "^2.57.20",
-    "vitest": "^5.1.0"
+    "viem": "^2.58.4",
+    "vitest": "^5.1.1"
   },
   "packageManager": "pnpm@12.11.2"
 }
